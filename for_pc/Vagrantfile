@@ -4,6 +4,7 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
   config.vm.define "base_vm"
+  config.vm.hostname = "c7pc"
   config.vm.network "public_network",
     use_dhcp_assigned_default_route: true,
     bridge: "enp4s0",
