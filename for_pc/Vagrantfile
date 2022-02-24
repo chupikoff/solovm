@@ -2,6 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
+  config.vm.provision "shell",
+    inline: "sudo yum -y install bash-completion vim epel-release htop && sudo yum -y update"
   config.vm.box = "centos/7"
   config.vm.define "base_vm"
   config.vm.hostname = "c7pc"
